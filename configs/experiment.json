@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-09-29T03:51:35.174925+00:00",
+  "fee_bps": 10.0,
+  "fee_assumption": "Illustrative constant taker fee; not verified historical Binance account pricing.",
+  "sizes": {
+    "small": 0.07909,
+    "medium": 0.7909,
+    "large": 3.954
+  },
+  "primary_size": "medium",
+  "size_rule": "Fixed BTC quantities equal to 1%, 10%, and 50% of median 25-level training bid depth, rounded to four significant digits.",
+  "seeds": [
+    7,
+    19,
+    42
+  ],
+  "total_timesteps": 200000,
+  "stress_fee_bps": [
+    0.0,
+    10.0,
+    20.0
+  ],
+  "splits": {
+    "training": [
+      "Sep2020",
+      "Oct2020",
+      "Nov2020",
+      "Dec2020",
+      "Jan2021"
+    ],
+    "validation": [
+      "Feb2021"
+    ],
+    "testing": [
+      "Mar2021"
+    ]
+  },
+  "training_statistics": {
+    "episodes": 1424,
+    "decisions": 85440,
+    "day_counts": {
+      "2020-09-01": 287,
+      "2020-10-01": 287,
+      "2020-11-01": 287,
+      "2020-12-01": 276,
+      "2021-01-01": 287
+    },
+    "loader_stats": {
+      "files_loaded": 5,
+      "rows_seen": 85839,
+      "complete_episodes": 1424,
+      "incomplete_windows": 11,
+      "discarded_rows": 399
+    },
+    "top_bid_depth_btc_quantiles": {
+      "p01": 5e-06,
+      "p10": 0.005907,
+      "p33": 0.20977561,
+      "p50": 0.8166355000000001,
+      "p67": 2.2399905000000007,
+      "p90": 6.633115700000001,
+      "p99": 14.998475029999998
+    },
+    "total_bid_depth_btc_quantiles": {
+      "p01": 1.0796940000000002,
+      "p10": 2.4205240000000003,
+      "p33": 5.39269444,
+      "p50": 7.9085725,
+      "p67": 10.879189239999999,
+      "p90": 18.1630521,
+      "p99": 35.118415330000005
+    }
+  },
+  "market_regimes": {
+    "arrival_spread_bps": {
+      "lower": 0.005292558996668031,
+      "upper": 0.008424795079364835
+    },
+    "episode_realized_volatility_bps": {
+      "lower": 9.395781664020094,
+      "upper": 15.986437321486157
+    },
+    "quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "calibration_split": "training",
+    "volatility_definition": "10000 * sqrt(sum(log(mid[t] / mid[t-1]) ** 2)) over 59 within-episode intervals; no annualization.",
+    "usage": "Fixed descriptive grouping thresholds. Whole-episode volatility is posthoc only and never a policy input."
+  },
+  "training_manifest": [
+    {
+      "path": "data/training/Sep2020_5s.csv.gz",
+      "bytes": 4431682,
+      "sha256": "4d4922f8225d4b746a69998f633709de768028c418765b1f269dc7b8ce83118a"
+    },
+    {
+      "path": "data/training/Oct2020_5s.csv.gz",
+      "bytes": 3672245,
+      "sha256": "c53c8ae44dd064e4369b6c1fddcec592b7f22a12c69ebc757e4edf8ef366488f"
+    },
+    {
+      "path": "data/training/Nov2020_5s.csv.gz",
+      "bytes": 3607619,
+      "sha256": "e7398fccb04ba7141ec33379afa81fb34942ee1b65ff6daf329b1febc543a359"
+    },
+    {
+      "path": "data/training/Dec2020_5s.csv.gz",
+      "bytes": 4498118,
+      "sha256": "03fe3badfc223718fbd368dfcff94edb143cc9fa5d153a0274fe25cf54cc3cc2"
+    },
+    {
+      "path": "data/training/Jan2021_5s.csv.gz",
+      "bytes": 4218960,
+      "sha256": "e7564a008ea2a215bb8ae59c1c5490c35074206349a8ac962a0ff743d9936e2b"
+    }
+  ]
+}

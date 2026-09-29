@@ -1,0 +1,7 @@
+# Versions used for the completed research run; CPU PyTorch is sufficient.
+numpy==2.5.3
+pandas==3.0.5
+gymnasium==1.3.0
+torch==2.14.0
+stable-baselines3==2.9.0
+matplotlib==3.11.2

@@ -1,0 +1,21 @@
+# Stable text line endings keep source hashes portable across checkouts.
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+
+# Binary assets must never receive text normalization.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.gz binary
+*.zip binary
+*.pt binary
+*.pth binary
